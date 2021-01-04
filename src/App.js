@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import Movies from './Movies';
 import './App.css';
 
 function App() {
@@ -7,6 +7,7 @@ function App() {
       <header className="App-header">
         The Shoppies
       </header>
+      <Movies/>
     </div>
   );
 }
