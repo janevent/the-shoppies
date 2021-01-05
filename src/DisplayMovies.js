@@ -1,10 +1,21 @@
 import React from 'react';
+import DisplayMovie from './DisplayMovie';
 
-export default class DisplayMovies extends React.Component {
+function DisplayMovies({movies}){
 
-    render(){
+    
         return(
-            <p>Display Movies</p>
+            <div>
+                {movies === [] ? ""
+                :
+                
+                    <DisplayMovie />
+                }
+            
+                
+            </div>
         )
-    }
+    
 }
+
+export default DisplayMovies
