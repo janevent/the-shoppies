@@ -21,3 +21,8 @@ code {
   align-items: center;
   /*justify-content: center;*/
 }
+
+.DisplayMovie {
+  background-color:  #282c34;
+  color: white;
+}

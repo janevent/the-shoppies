@@ -4,23 +4,39 @@ import DisplayMovie from './DisplayMovie';
 class DisplayMovies extends React.Component{
 
         
-
-        renderMovies = () => {    
-            console.log(this.props)        
+        componentDidMount(){
+            console.log(this.props)
             let displayMovies = this.props.movies.forEach((m) => {
-                let ob = {title: m.Title, date: m.Date}
-                return <DisplayMovie movie={ob} />
+               console.log("m", m)
             })
-            return displayMovies
         }
+        // renderMovies = () => {    
+        //     console.log(this.props)        
+        //     let displayMovies = this.props.movies.forEach((m) => {
+        //         let ob = {title: m.Title, year: m.Year}
+        //         console.log(ob)
+        //         return <DisplayMovie movie={ob} />
+        //     })
+        //     return displayMovies
+        // }
 
         render(){
+            let movs = this.props.movies.map((m) => <DisplayMovie title={m.Title} year={m.Year} />)   
+            //let mm = this.props.movies.forEach((m) => m.Title)
+            //console.log(mm)
+            console.log(movs)
+            console.log(this.props)
             return(
                 <div>
-                    {this.props.movies === [] ? ""
-                    :               
-                    this.renderMovies()
-                    }            
+                    <p>Display Movies</p>
+                    
+                    <div>{this.props.movies !== [] ?
+                        movs
+                        : ""
+                        }
+                    </div>          
+                    
+                               
                 </div>
             )
         }
@@ -28,3 +44,8 @@ class DisplayMovies extends React.Component{
 }
 
 export default DisplayMovies
+// {this.props.movies === [] ? ""
+//                     : 
+//                     this.props.movies.forEach((m) => <DisplayMovie title={m.Title} year={m.Year} />)              
+                    
+//                     }            
