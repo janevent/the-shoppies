@@ -42,4 +42,3 @@ export default class SearchBar extends React.Component {
     }
 }
 
-//<//button type="submit" onSubmit={this.submitTerm} value="Search">Search</button>

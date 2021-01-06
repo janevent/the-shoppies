@@ -6,7 +6,7 @@ function Movies() {
     return (
         <div className="Movies">
             <SearchBar />
-            <DisplayMovies />
+            
         </div>
     )
 }

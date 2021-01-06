@@ -1,20 +1,29 @@
 import React from 'react';
 import DisplayMovie from './DisplayMovie';
 
-function DisplayMovies({movies}){
+class DisplayMovies extends React.Component{
 
-    
-        return(
-            <div>
-                {movies === [] ? ""
-                :
-                
-                    <DisplayMovie />
-                }
-            
-                
-            </div>
-        )
+        
+
+        renderMovies = () => {    
+            console.log(this.props)        
+            let displayMovies = this.props.movies.forEach((m) => {
+                let ob = {title: m.Title, date: m.Date}
+                return <DisplayMovie movie={ob} />
+            })
+            return displayMovies
+        }
+
+        render(){
+            return(
+                <div>
+                    {this.props.movies === [] ? ""
+                    :               
+                    this.renderMovies()
+                    }            
+                </div>
+            )
+        }
     
 }
 
