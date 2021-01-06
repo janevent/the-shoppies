@@ -16,9 +16,13 @@ export default class SearchBar extends React.Component {
     }
 
     submitTerm = (event) => {
+        //"http://www.omdbapi.com/?s=Guardians+of+the+Galaxy+Vol.+2&apikey=3fe99504"
         event.preventDefault();
         console.log("in submitTerm function")
-        fetch("http://www.omdbapi.com/?s=Guardians+of+the+Galaxy+Vol.+2&apikey=3fe99504")
+        let term = this.state.term
+        let arrayTerm = term.split(" ")
+        let joinedTerm = arrayTerm.join("+")
+        fetch(`http://www.omdbapi.com/?s=${joinedTerm}&apikey=3fe99504`)
         .then(response => response.json())
         .then(thisjson => {
             console.log("response", thisjson)
