@@ -1,4 +1,6 @@
 import React from 'react';
+import DenominateButton from 'DenominateButton';
+import NominateButton from 'NominateButton';
 
 export default class DisplayMovie extends React.Component{
     
@@ -18,14 +20,12 @@ export default class DisplayMovie extends React.Component{
         //add to nominated list
     }
 
-    clickDenominated = () => {
+    clickDenominate = () => {
         this.setState({
             nominated: false
         })
         //take away from nominated list
     }
-
-
 
     componentDidMount(){
         console.log("DisplayMovie did mount");
@@ -36,9 +36,13 @@ export default class DisplayMovie extends React.Component{
         
         return(
             <div className="DisplayMovie">
-                <h1>Display Movie</h1>
+                
                 <h2>{this.state.title}</h2>
-                <p>{this.state.year}</p>
+                <h3>{this.state.year}</h3>
+                {!!this.state.nominated ?
+                <DenominateButton denominateFun={this.clickDenominate}/>
+                :
+                <NominateButton nominateFun={this.clickNominate}/>}
             </div>
         )
     }
