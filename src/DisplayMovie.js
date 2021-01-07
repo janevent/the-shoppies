@@ -1,6 +1,6 @@
 import React from 'react';
-import DenominateButton from 'DenominateButton';
-import NominateButton from 'NominateButton';
+import DenButton from './DenButton';
+import NominateButton from './NominateButton';
 
 export default class DisplayMovie extends React.Component{
     
@@ -20,7 +20,7 @@ export default class DisplayMovie extends React.Component{
         //add to nominated list
     }
 
-    clickDenominate = () => {
+    clickDen = () => {
         this.setState({
             nominated: false
         })
@@ -40,7 +40,7 @@ export default class DisplayMovie extends React.Component{
                 <h2>{this.state.title}</h2>
                 <h3>{this.state.year}</h3>
                 {!!this.state.nominated ?
-                <DenominateButton denominateFun={this.clickDenominate}/>
+                <DenButton denFun={this.clickDen}/>
                 :
                 <NominateButton nominateFun={this.clickNominate}/>}
             </div>

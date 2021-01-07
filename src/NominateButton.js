@@ -4,6 +4,10 @@ export default class NominateButton extends React.Component {
 
 
     render(){
-        <button onClick={this.props.nominateFun}>Nominate</button>
+        return (
+            <div>
+            <button onClick={this.props.nominateFun}>Nominate</button>
+            </div>
+        )
     }
 }
