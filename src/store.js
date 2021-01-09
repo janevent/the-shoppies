@@ -1,4 +1,4 @@
-import nominationdReducer from './reducers/nominationdReducer';
+import nominationsReducer from './reducers/nominationsReducer';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
