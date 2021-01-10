@@ -4,14 +4,14 @@ import DisplayNominations from'./DisplayNominations';
 import { connect } from 'react-redux';
 //import DisplayMovies from './DisplayMovies';
 
-function Movies() {
+function Movies(props) {
+    console.log(props)
+    let toDisplay = (props.nominations.length === 5) ? <DisplayNominations /> : ""
     return (
         <div className="Movies">
             <SearchBar />
-            {this.props.nominations.length === 5 ?
-                <DisplayNominations /> :
-                ""
-            }
+            {toDisplay}
+            
         </div>
     )
 }
