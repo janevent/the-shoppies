@@ -1,6 +1,6 @@
 import React from 'react';
 import SearchBar from './SearchBar';
-import DisplayMovies from './DisplayMovies';
+//import DisplayMovies from './DisplayMovies';
 
 function Movies() {
     return (

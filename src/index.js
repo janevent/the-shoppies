@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import store from './store.js';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
+//import thunk from 'redux-thunk';
 
 ReactDOM.render(
   <Provider store={store}>

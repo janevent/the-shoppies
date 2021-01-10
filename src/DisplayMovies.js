@@ -6,7 +6,7 @@ class DisplayMovies extends React.Component{
         
         componentDidMount(){
             console.log(this.props)
-            let displayMovies = this.props.movies.forEach((m) => {
+            this.props.movies.forEach((m) => {
                console.log("m", m)
             })
         }
