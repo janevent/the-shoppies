@@ -9,8 +9,9 @@ function Movies(props) {
     let toDisplay = (props.nominations.length === 5) ? <DisplayNominations /> : ""
     return (
         <div className="Movies">
-            <SearchBar />
             {toDisplay}
+            <SearchBar />
+            
             
         </div>
     )
