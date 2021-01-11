@@ -25,10 +25,13 @@ export default class SearchBar extends React.Component {
         fetch(`http://www.omdbapi.com/?s=${joinedTerm}&apikey=3fe99504`)
         .then(response => response.json())
         .then(thisjson => {
+            //use redux and thunk
             console.log("response", thisjson)
+            if(thisjson.Response === "true"){
             this.setState({
                 moviesData: thisjson.Search
             })
+            }
         })
     }
 
@@ -36,7 +39,7 @@ export default class SearchBar extends React.Component {
         return(
             <div className="SearchBar">
                 <form className="SearchForm" onSubmit={this.submitTerm}>
-                    <label className="SearchItem">Search For Movies: </label>
+                    <label className="SearchItem" className="label">Search For Movies: </label>
                     <input className="SearchItem" type="text" value={this.state.term} onChange={this.changeInput}/>  
                     <input className="SearchItem" type="submit" value="Search" />
                     

@@ -22,8 +22,14 @@ code {
   /*justify-content: center;*/
 }
 
+.DisplayMovies {
+  background-color: rgb(5, 199, 233);
+  color: black;
+  
+}
+
 .DisplayMovie {
-  background-color:  #282c34;
+  
   color: white;
 }
 
@@ -48,6 +54,11 @@ code {
 }
 
 .SearchItem {
-  margin: 5px;
+  margin-top: 5px;
+  margin: 15px;
   padding: 5px;
+}
+
+.label {
+  font-size: 25px;
 }
