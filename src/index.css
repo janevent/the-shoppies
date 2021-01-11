@@ -29,4 +29,25 @@ code {
 
 .DisplayNominations {
   background-color: fuchsia;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.DisplayNomination {
+  margin: 10px;
+  padding: 10px;
+}
+
+.SearchForm {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.SearchItem {
+  margin: 5px;
+  padding: 5px;
 }

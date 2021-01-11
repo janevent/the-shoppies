@@ -34,10 +34,11 @@ export default class SearchBar extends React.Component {
 
     render(){
         return(
-            <div>
-                <form onSubmit={this.submitTerm}>
-                    <label>Search For Movies: <input type="text" value={this.state.term} onChange={this.changeInput}/>  </label> 
-                    <input type="submit" value="Search" />
+            <div className="SearchBar">
+                <form className="SearchForm" onSubmit={this.submitTerm}>
+                    <label className="SearchItem">Search For Movies: </label>
+                    <input className="SearchItem" type="text" value={this.state.term} onChange={this.changeInput}/>  
+                    <input className="SearchItem" type="submit" value="Search" />
                     
                 </form>
                 <DisplayMovies movies={this.state.moviesData}/>

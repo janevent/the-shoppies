@@ -28,7 +28,7 @@ class DisplayMovies extends React.Component{
             console.log(this.props)
             return(
                 <div>
-                    <p>Display Movies</p>
+                    
                     
                     <div>{this.props.movies !== [] ?
                         movs
