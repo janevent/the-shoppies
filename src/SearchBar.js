@@ -1,11 +1,13 @@
 import React from 'react';
 import DisplayMovies from './DisplayMovies'
+import fetchAndSetSearchedMovies from './actions/fetchAndSetSearchedMovies';
+import { connect } from 'react-redux';
 
-export default class SearchBar extends React.Component {
+class SearchBar extends React.Component {
 
     state = {
-        term: "",
-        moviesData: []
+        term: ""
+        //moviesData: []
     }
 
     changeInput = (event) => {
@@ -22,17 +24,20 @@ export default class SearchBar extends React.Component {
         let term = this.state.term
         let arrayTerm = term.split(" ")
         let joinedTerm = arrayTerm.join("+")
-        fetch(`http://www.omdbapi.com/?s=${joinedTerm}&apikey=3fe99504`)
-        .then(response => response.json())
-        .then(thisjson => {
-            //use redux and thunk
-            console.log("response", thisjson)
-            if(thisjson.Response === "true"){
-            this.setState({
-                moviesData: thisjson.Search
-            })
-            }
-        })
+        // import action
+        //action fetch request fetch and set searchedMovies
+        this.props.fetchAndSetSearchedMovies(joinedTerm)
+        // fetch(`http://www.omdbapi.com/?s=${joinedTerm}&apikey=3fe99504`)
+        // .then(response => response.json())
+        // .then(thisjson => {
+        //     //use redux and thunk
+        //     console.log("response", thisjson)
+        //     if(thisjson.Response === "true"){
+        //     this.setState({
+        //         moviesData: thisjson.Search
+        //     })
+        //     }
+        // })
     }
 
     render(){
@@ -44,9 +49,20 @@ export default class SearchBar extends React.Component {
                     <input className="SearchItem" type="submit" value="Search" />
                     
                 </form>
-                <DisplayMovies movies={this.state.moviesData}/>
+                <DisplayMovies />
             </div>
         )
     }
 }
+
+const mapDispatchToProps = (term) => {
+    return (dispatch) => {
+        return {
+            fetchAndSetSearchedMovies: (term) => dispatch(fetchAndSetSearchedMovies(term) )
+        }
+    }
+    
+}
+
+export default connect(null, mapDispatchToProps)(SearchBar)
 
