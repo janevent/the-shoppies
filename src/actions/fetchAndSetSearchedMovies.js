@@ -12,7 +12,7 @@ const fetchAndSetSearchedMovies = (term) => {
         .then(thisjson => {
             //use redux and thunk
             console.log("response", thisjson)
-            if(thisjson.Response === "true"){
+            if(thisjson.Response === "True"){
                 dispatch(setSearchedMovies(thisjson.Search))
             }
         })
