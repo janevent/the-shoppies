@@ -1,12 +1,13 @@
 import React from 'react';
 import DisplayMovie from './DisplayMovie';
+import { connect } from 'react-redux';
 
 class DisplayMovies extends React.Component{
 
         
         componentDidMount(){
             console.log(this.props)
-            this.props.movies.forEach((m) => {
+            this.props.searchedMovies.forEach((m) => {
                console.log("m", m)
             })
         }
@@ -21,7 +22,7 @@ class DisplayMovies extends React.Component{
         // }
 
         render(){
-            let movs = this.props.movies.map((m) => <DisplayMovie title={m.Title} year={m.Year} />)   
+            let movs = this.props.searchedMovies.map((m) => <DisplayMovie title={m.Title} year={m.Year} />)   
             //let mm = this.props.movies.forEach((m) => m.Title)
             //console.log(mm)
             console.log(movs)
@@ -30,7 +31,7 @@ class DisplayMovies extends React.Component{
                 <div className="DisplayMovies">
                     
                     
-                    <div>{this.props.movies !== [] ?
+                    <div>{this.props.searchedMovies !== [] ?
                         movs
                         : ""
                         }
@@ -43,7 +44,13 @@ class DisplayMovies extends React.Component{
     
 }
 
-export default DisplayMovies
+const mapStateToProps = (state) => {
+    return {
+        searchedMovies: state.searchedMovies
+    }
+}
+
+export default connect(mapStateToProps)(DisplayMovies)
 // {this.props.movies === [] ? ""
 //                     : 
 //                     this.props.movies.forEach((m) => <DisplayMovie title={m.Title} year={m.Year} />)              
