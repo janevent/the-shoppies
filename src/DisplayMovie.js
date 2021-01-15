@@ -64,6 +64,12 @@ class DisplayMovie extends React.Component{
     }
 }
 
+const mapStateToProps = (state) => {
+    return {
+        nominations: state.nominations
+    }
+}
+
 const mapDispatchToProps = (dispatch) => {
     return {
         addNomination: (nomination) => dispatch(addNomination(nomination)),
@@ -71,4 +77,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect( null, mapDispatchToProps)(DisplayMovie)
+export default connect(mapStateToProps, mapDispatchToProps)(DisplayMovie)
