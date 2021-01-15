@@ -24,8 +24,8 @@ class DisplayMovies extends React.Component{
         render(){
             let movs = this.props.searchedMovies.map((m) => <DisplayMovie title={m.Title} year={m.Year} />)   
             //let mm = this.props.movies.forEach((m) => m.Title)
-            //console.log(mm)
-            console.log(movs)
+            //must rerender <DisplayMovie /> when global state is changed"
+            
             console.log(this.props)
             return(
                 <div className="DisplayMovies">

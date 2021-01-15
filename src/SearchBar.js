@@ -1,5 +1,5 @@
 import React from 'react';
-import DisplayMovies from './DisplayMovies'
+//import DisplayMovies from './DisplayMovies'
 import fetchAndSetSearchedMovies from './actions/fetchAndSetSearchedMovies';
 import { connect } from 'react-redux';
 
@@ -49,7 +49,6 @@ class SearchBar extends React.Component {
                     <input className="SearchItem" type="submit" value="Search" />
                     
                 </form>
-                <DisplayMovies />
             </div>
         )
     }
@@ -64,5 +63,11 @@ const mapDispatchToProps = (term) => {
     
 }
 
-export default connect(null, mapDispatchToProps)(SearchBar)
+const mapStateToProps = (state) => {
+    return {
+        searchedMovies: state.searchedMovies
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchBar)
 
