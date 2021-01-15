@@ -58,7 +58,8 @@ class DisplayMovie extends React.Component{
                 {!!this.state.nominated ?
                 <DenButton denFun={this.clickDen}/>
                 :
-                <NominateButton nominateFun={this.clickNominate}/>}
+                (this.props.nominations.length < 5) ? <NominateButton nominateFun={this.clickNominate}/> 
+                : "" }
             </div>
         )
     }
