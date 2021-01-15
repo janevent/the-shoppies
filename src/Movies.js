@@ -23,7 +23,7 @@ function Movies(props) {
 const mapStateToProps = (state) => {
     return {
         nominations: state.nominations,
-        searchedMovies: searchedMovies
+        searchedMovies: state.searchedMovies
     }
 }
 

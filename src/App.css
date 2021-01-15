@@ -23,6 +23,9 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  border-bottom-style:ridge;
+  border-bottom-color:rgb(5, 199, 233);
+  border-width: 30px;
 }
 
 .App-link {
