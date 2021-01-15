@@ -15,6 +15,7 @@ class DisplayMovie extends React.Component{
             nominated: false
         }
     }
+    //update state when props are updated
 
     clickNominate = (event) => {
         this.setState({
@@ -37,8 +38,18 @@ class DisplayMovie extends React.Component{
         console.log(this.props)
     }
 
+    componentDidUpdate(prevprops){
+        if(this.props.title !== prevprops.title){
+            this.setState({
+                title: this.props.title,
+                year: this.props.year,
+                nominated: false
+            })
+        }
+    }
+
     render(){ 
-        
+        console.log(this.props, this.state)
         return(
             <div className="DisplayMovie">
                 
