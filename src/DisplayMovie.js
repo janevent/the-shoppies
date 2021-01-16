@@ -1,6 +1,7 @@
 import React from 'react';
 import DenButton from './DenButton';
 import NominateButton from './NominateButton';
+import AddReviewButton from './AddReviewButton';
 import addNomination from './actions/addNomination';
 import deleteNomination from './actions/deleteNomination';
 import { connect } from 'react-redux';
@@ -12,7 +13,8 @@ class DisplayMovie extends React.Component{
         this.state = {
             title: props.title,
             year: props.year,
-            nominated: false
+            nominated: false,
+            addReviewClicked: false
         }
     }
     //update state when props are updated
@@ -31,6 +33,13 @@ class DisplayMovie extends React.Component{
         })
         //take away from nominated list
         this.props.deleteNomination(this.state.title);
+    }
+
+    onClickReviewButton = () => {
+        //display review form under movie title 
+        //upon submit change state
+        //or dispatch a change to reviews globally
+        this.setState({addReviewClicked: true})
     }
 
     componentDidMount(){
@@ -60,6 +69,7 @@ class DisplayMovie extends React.Component{
                 :
                 (this.props.nominations.length < 5) ? <NominateButton nominateFun={this.clickNominate}/> 
                 : "" }
+                <AddReviewButton title={this.state.title} year={this.state.year} onClickAddReview={this.onClickAddReview} />
             </div>
         )
     }
