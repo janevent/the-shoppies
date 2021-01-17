@@ -9,7 +9,7 @@ class Reviews extends React.Component{
         const reviews = this.props.reviews.map((r, i) => {
              return(
              <div id={i+r.title}>
-                 <h3>{r.title}</h3>
+                 <h1>{r.title}</h1>
                  <h3>{r.year}</h3>
                  <p>{r.review}</p>
              </div>
@@ -20,7 +20,7 @@ class Reviews extends React.Component{
         return (
             <div className="Reviews" >
                 <div className="links"><Link to="/">Search Movies</Link>  <Link to="/nominations" >Nominations</Link></div>
-                <h3>Reviews</h3>
+                <p>Reviews</p>
             { this.props.reviews.length === 0 ?
                <p>There are no reviews yet</p> :
                <div>{reviews}</div>

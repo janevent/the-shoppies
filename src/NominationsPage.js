@@ -16,6 +16,7 @@ class NominationsPage extends React.Component {
         return (
             <div className="NominationsPage">
                 <div className="links"><Link to="/">Search Movies</Link>  <Link to="/reviews">Reviews</Link></div>
+                <p>Nominations</p>
                 {this.props.nominations.length > 0 ?
                 <div>{allNominations}</div> :
                 <p>There are no nominations yet</p>
