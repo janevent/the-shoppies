@@ -37,7 +37,9 @@ class DisplayMovie extends React.Component{
         this.props.deleteNomination(this.state.title);
     }
 
-    onClickReviewButton = () => {
+    onClickAddReview = (event) => {
+        console.log("onAddClickReview")
+        event.preventDefault();
         //display review form under movie title 
         //upon submit change state
         //or dispatch a change to reviews globally
@@ -80,12 +82,14 @@ class DisplayMovie extends React.Component{
                 
                 <h2>{this.state.title}</h2>
                 <h3>{this.state.year}</h3>
+                <div>
                 {!!this.state.nominated ?
                 <DenButton denFun={this.clickDen}/>
                 :
                 (this.props.nominations.length < 5) ? <NominateButton nominateFun={this.clickNominate}/> 
                 : "" }
-                <AddReviewButton title={this.state.title} year={this.state.year} onClickAddReview={this.onClickAddReview} />
+                </div>
+                <div><AddReviewButton title={this.state.title} year={this.state.year} onClickAddReview={this.onClickAddReview} /></div>
                 {this.state.addReviewClicked === true ?
                     <ReviewForm onSubmitReview={this.onSubmitReview} title={this.state.title} year={this.state.year}/>  :
                     ""  

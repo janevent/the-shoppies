@@ -1,16 +1,16 @@
 import React from 'react';
 
-export default class ReviewForm {
+export default class ReviewForm extends React.Component{
 
     render(){
         //this.props.title, this.props.year
         return (
             <div class="ReviewForm" >
-                <p>Review For Movie</p>
-                <form>
-                    <label>Write a Review</label>
-                    <input type="text"/>
-                    <input type="submit" value="Submit Review"/>
+                
+                <form class="review-form">
+                    <label className="review-item">Write a Review  </label>
+                    <input className="review-item" type="text"/>
+                    <input className="review-item" type="submit" value="Submit Review"/>
                 </form>
             </div>
         )
