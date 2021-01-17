@@ -46,17 +46,21 @@ class DisplayMovie extends React.Component{
         this.setState({addReviewClicked: true})
     }
 
-    onSubmitReview = (event) => {
+    onSubmitReview = (r) =>{
         //dispatch add review
-        event.preventDefault();
-        console.log(r)
-        let r = event.target.value;
+        
+        
+        
+        
         let review = {
             title: this.state.title,
             year: this.state.year,
             review: r
         }
+        console.log(review)
         this.props.addReview(review)
+        this.setState({addReviewClicked: "submitted"})
+        console.log("reviews", this.props.reviews)
     }
 
     componentDidMount(){
@@ -101,7 +105,8 @@ class DisplayMovie extends React.Component{
 
 const mapStateToProps = (state) => {
     return {
-        nominations: state.nominations
+        nominations: state.nominations,
+        reviews: state.reviews
     }
 }
 
