@@ -4,6 +4,8 @@ import NominateButton from './NominateButton';
 import AddReviewButton from './AddReviewButton';
 import addNomination from './actions/addNomination';
 import deleteNomination from './actions/deleteNomination';
+import addReview from './actions/addReview';
+import ReviewForm from './ReviewForm';
 import { connect } from 'react-redux';
 
 class DisplayMovie extends React.Component{
@@ -42,6 +44,19 @@ class DisplayMovie extends React.Component{
         this.setState({addReviewClicked: true})
     }
 
+    onSubmitReview = (event) => {
+        //dispatch add review
+        event.preventDefault();
+        console.log(r)
+        let r = event.target.value;
+        let review = {
+            title: this.state.title,
+            year: this.state.year,
+            review: r
+        }
+        this.props.addReview(review)
+    }
+
     componentDidMount(){
         console.log("DisplayMovie did mount");
         console.log(this.props)
@@ -52,7 +67,8 @@ class DisplayMovie extends React.Component{
             this.setState({
                 title: this.props.title,
                 year: this.props.year,
-                nominated: false
+                nominated: false,
+                addReviewClicked: false
             })
         }
     }
@@ -70,6 +86,10 @@ class DisplayMovie extends React.Component{
                 (this.props.nominations.length < 5) ? <NominateButton nominateFun={this.clickNominate}/> 
                 : "" }
                 <AddReviewButton title={this.state.title} year={this.state.year} onClickAddReview={this.onClickAddReview} />
+                {this.state.addReviewClicked === true ?
+                    <ReviewForm onSubmitReview={this.onSubmitReview} title={this.state.title} year={this.state.year}/>  :
+                    ""  
+                }
             </div>
         )
     }
@@ -84,7 +104,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         addNomination: (nomination) => dispatch(addNomination(nomination)),
-        deleteNomination: (title) => dispatch(deleteNomination(title))
+        deleteNomination: (title) => dispatch(deleteNomination(title)),
+        addReview: (review) => dispatch(addReview(review))
     }
 }
 
