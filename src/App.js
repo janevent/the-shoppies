@@ -11,9 +11,10 @@ function App() {
         The Shoppies
       </header>
       <Switch>
+        <Route path="/nominations" component={NominationsPage} />
         <Route path="/reviews" component={Reviews} />
         <Route path="/" component={Movies} />
-        <Route path="/nominations" component={NominationsPage} />
+        
       </Switch >
     </div>
   );

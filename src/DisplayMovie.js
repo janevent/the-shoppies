@@ -47,10 +47,6 @@ class DisplayMovie extends React.Component{
     }
 
     onSubmitReview = (r) =>{
-        //dispatch add review
-        
-        
-        
         
         let review = {
             title: this.state.title,

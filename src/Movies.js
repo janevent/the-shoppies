@@ -13,7 +13,7 @@ function Movies(props) {
     return (
         <div className="Movies">
             {toDisplay}
-            <Link to="/reviews">Reviews</Link>
+            <div className="links"><Link to="/reviews">Reviews</Link>  <Link to="/nominations">Nominations</Link></div>
             <SearchBar />
             {searchedMovs}
             
