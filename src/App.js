@@ -1,5 +1,6 @@
 import Movies from './Movies';
 import Reviews from './Reviews';
+import NominationsPage from './NominationsPage';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -12,7 +13,7 @@ function App() {
       <Switch>
         <Route path="/reviews" component={Reviews} />
         <Route path="/" component={Movies} />
-        
+        <Route path="/nominations" component={NominationsPage} />
       </Switch >
     </div>
   );
