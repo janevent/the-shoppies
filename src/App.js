@@ -1,4 +1,5 @@
 import Movies from './Movies';
+import Reviews from './Reviews';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -9,8 +10,9 @@ function App() {
         The Shoppies
       </header>
       <Switch>
-        
+        <Route path="/reviews" component={Reviews} />
         <Route path="/" component={Movies} />
+        
       </Switch >
     </div>
   );

@@ -13,7 +13,7 @@ code {
     monospace;
 }
 
-.Movies {
+.Movies, .Reviews {
   background-color: #282c34;
   font-family: 'Optima', sans-serif;
   color: white;
@@ -56,6 +56,9 @@ code {
   padding: 10px;
 }
 
+.DisplayNomination {
+  font: 5 px;
+}
 .SearchForm {
   margin-top: 20px;
   display: flex;
@@ -81,4 +84,6 @@ button {
   border-radius: 4px;
   background:rgb(195, 216, 248);
 }
+
+
 
