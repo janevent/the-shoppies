@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 class Reviews extends React.Component{
 
@@ -18,6 +19,7 @@ class Reviews extends React.Component{
         
         return (
             <div className="Reviews" >
+                <Link to="/">Search Movies</Link>
                 <h3>Reviews</h3>
             { this.props.reviews.length === 0 ?
                <p>There are no reviews yet</p> :
