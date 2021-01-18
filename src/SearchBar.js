@@ -20,7 +20,7 @@ class SearchBar extends React.Component {
     submitTerm = (event) => {
         //"http://www.omdbapi.com/?s=Guardians+of+the+Galaxy+Vol.+2&apikey=3fe99504"
         event.preventDefault();
-        console.log("in submitTerm function")
+        //console.log("in submitTerm function")
         let term = this.state.term
         let arrayTerm = term.split(" ")
         let joinedTerm = arrayTerm.join("+")
@@ -69,5 +69,5 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchBar)
+export default connect(null, mapDispatchToProps)(SearchBar)
 

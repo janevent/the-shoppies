@@ -3,7 +3,7 @@ import SearchBar from './SearchBar';
 import DisplayNominations from'./DisplayNominations';
 import { connect } from 'react-redux';
 import DisplayMovies from './DisplayMovies';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function Movies(props) {
     console.log(props)
