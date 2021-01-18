@@ -63,11 +63,11 @@ const mapDispatchToProps = (term) => {
     
 }
 
-const mapStateToProps = (state) => {
-    return {
-        searchedMovies: state.searchedMovies
-    }
-}
+//const mapStateToProps = (state) => {
+  //  return {
+    //    searchedMovies: state.searchedMovies
+    //}
+//}
 
 export default connect(null, mapDispatchToProps)(SearchBar)
 
