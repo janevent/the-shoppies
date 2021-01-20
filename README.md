@@ -1,4 +1,17 @@
-altering read me
+https://the-shoppies-jvent.netlify.app/ 
+
+Description: 
+
+A website that searches a movies api for titles with the term that the user inputs.
+
+Titles and years are displayed.  Options to nominate or give a review is given. 
+
+A user can navigate to a nominations page or a review page.
+
+A user can unnominate a movie, and can nominate up to 5 movies.  
+
+When 5 movies are nominated the titles will be displayed in a banner. 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
